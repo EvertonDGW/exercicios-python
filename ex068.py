@@ -1,32 +1,28 @@
-frase = 'aaaooo'
+frase = 'aaaaooo'
 
-# Inicializa o índice do loop
+# Inicialização de variáveis
 i = 0
-
-# Inicializa variáveis para rastrear a letra que apareceu mais vezes e a quantidade de vezes que ela apareceu
 qtd_apareceu_mais_vezes = 0
 letra_apareceu_mais_vezes = ''
 
-# Loop enquanto o índice é menor que o comprimento da string
+# Loop while para percorrer a string
 while i < len(frase):
-    # Obtém o caractere atual
     letra_atual = frase[i]
 
-    # Verifica se o caractere atual é um espaço em branco e, se sim, passa para o próximo caractere
-    if letra_atual == ' ':
+    # Ignora espaços em branco
+    if letra_atual == ' ': # esse comanod nao necessariamente necessario, ele so esta caso houver espaçoes em brancos dentro da variavel frase
         i += 1
         continue
 
-    # Conta quantas vezes o caractere atual aparece na string
-    qtd_apareceu_mais_vezes_atual = frase.count(letra_atual)
+    # Conta quantas vezes a letra atual aparece na string
+    qtd_atual = frase.count(letra_atual)
 
-    # Verifica se o caractere atual apareceu mais vezes do que o anteriormente mais frequente
-    if qtd_apareceu_mais_vezes < qtd_apareceu_mais_vezes_atual:
-        # Atualiza a letra e a quantidade de vezes
-        qtd_apareceu_mais_vezes = qtd_apareceu_mais_vezes_atual
+    # Verifica se a letra atual apareceu mais vezes que a letra anteriormente mais frequente
+    if qtd_apareceu_mais_vezes <= qtd_atual:
+        qtd_apareceu_mais_vezes = qtd_atual
         letra_apareceu_mais_vezes = letra_atual
 
-    # Avança para o próximo caractere
+    # Incremento do contador para passar para o próximo caractere
     i += 1
 
 # Imprime o resultado
