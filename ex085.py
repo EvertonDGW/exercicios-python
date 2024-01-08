@@ -12,7 +12,8 @@ inserir, apagar e listar valores da sua lista
 Não permita que o programa quebre com 
 erros de índices inexistentes na lista.
 """
-import os  # Importa o módulo os para interagir com funcionalidades do sistema operacional
+
+import os
 
 lista = []  # Inicializa uma lista vazia chamada 'lista' para armazenar valores
 
@@ -21,7 +22,7 @@ while True:  # Loop infinito para manter o programa em execução
     opcao = input('[i]nserir [a]pagar [l]istar: ')  # Captura a opção do usuário
 
     if opcao == 'i':  # Se a opção for 'i', o usuário deseja inserir na lista
-        os.system('clear')  # Limpa a tela do terminal
+        os.system('cls' if os.name == 'nt' else 'clear')  # Limpa a tela do terminal
         valor = input('Valor: ')  # Solicita ao usuário um valor
         lista.append(valor)  # Adiciona o valor à lista
     elif opcao == 'a':  # Se a opção for 'a', o usuário deseja apagar um elemento da lista
@@ -37,7 +38,7 @@ while True:  # Loop infinito para manter o programa em execução
         except Exception:
             print('Erro desconhecido')  # Trata outros erros desconhecidos
     elif opcao == 'l':  # Se a opção for 'l', o usuário deseja listar os elementos da lista
-        os.system('clear')  # Limpa a tela do terminal
+        os.system('cls' if os.name == 'nt' else 'clear')  # Limpa a tela do terminal
 
         if len(lista) == 0:
             print('Nada para listar')  # Mensagem se a lista estiver vazia
